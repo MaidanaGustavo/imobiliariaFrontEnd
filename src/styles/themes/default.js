@@ -16,6 +16,7 @@ export default {
     pixel3 : '393px',
     iphoneXr : '414px',
     iphone : '375px',
-    mediumScreen : '1024px'
+    mediumScreen : '1024px',
+    galaxyS9 : '360px'
   }
 }

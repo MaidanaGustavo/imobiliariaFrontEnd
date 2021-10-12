@@ -170,6 +170,13 @@ export const Container = styled.div`
     -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   }
+  
+  @media (max-width : ${({theme})=> theme.screen.pixel3}){
+    h1{
+      font-size : 15pt;
+      text-align:center;
+    }
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -179,6 +186,24 @@ export const ButtonsContainer = styled.div`
   justify-content: space-evenly;
   -webkit-animation: bounce-in-top 1.1s both;
 	        animation: bounce-in-top 1.1s both;
+
+  @media (max-width : ${({theme})=> theme.screen.iphoneXr}){
+    
+    flex-direction: column;
+    width : 100%;
+    heigth : 100%;
+    justify-content: center;
+    align-items:center;
+    Button{
+      width:100%
+    }
+    Button:first-child{
+      margin-bottom: 25px;
+      width:100%
+    }
+    
+    
+  }
 `;
 
 export const FormContainer = styled.div`

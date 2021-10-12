@@ -81,14 +81,18 @@ export default function SignUp(){
   async function searchCep(){
     const form = document.forms.registration;
     const {cep,rua,bairro,cidade,uf} = form;
+    rua.value = '.....';
+    bairro.value = '.....';
+    cidade.value = '.....';
+    uf.value = '.....';
     const cepLimpo = cep.value.replace(/\D/g, '');
     const buscaCep = await fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`);
     const response = await buscaCep.json();
-    console.log(response)
-    rua.value = response.logradouro;
-    bairro.value = response.bairro;
-    cidade.value = response.localidade;
-    uf.value = response.uf;
+    console.log(response.localidade)
+    rua.value = response.logradouro === undefined ? '' : response.logradouro;
+    bairro.value = response.bairro === undefined ? '' : response.bairro;
+    cidade.value = response.localidade === undefined ? '' : response.localidade;
+    uf.value = response.uf === undefined ? '' : response.uf;
   }
 
 
@@ -130,7 +134,7 @@ export default function SignUp(){
  
          <div>
          <label htmlFor="cep">
-         <Input type="text" name="cep" placeholder="Cep" onBlur={() => searchCep()} required/>
+         <Input type="text" name="cep" placeholder="Cep" onBlur={() => searchCep()} required mask="99999-999"/>
          </label>  
          <label htmlFor="rua">
          <Input type="text" name="rua" placeholder="Rua" required />

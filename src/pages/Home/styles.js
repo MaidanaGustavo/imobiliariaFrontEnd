@@ -472,6 +472,6 @@ export const Nav = styled.nav`
       align-self: flex-start;
     }
   }
-
+  }
 
 `;

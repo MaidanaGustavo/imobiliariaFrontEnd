@@ -22,7 +22,14 @@ export const Button = styled.button`
     opacity:1;
   }
   @media(max-width:${({theme})=>theme.screen.pixel3}){
-    max-width: 150px;
+    max-width: 250px;
+  }
+ 
+
+  @media(max-width:${({theme})=>theme.screen.galaxyS9}){
+    max-width: 200px;
+    
+    font-size: 10pt;
   }
   ${({theme,dark}) => dark && css`
       background : #000;

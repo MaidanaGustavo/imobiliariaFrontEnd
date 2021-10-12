@@ -16,6 +16,11 @@ export const InputField = styled.div`
     outline: none;
     border-color: ${({theme})=>theme.colors.textColor} ;
   }
+  
+  @media (max-width:${({theme})=>theme.screen.pixel3}){
+    max-width: 150px;
+    max-height: 50px;
+  }
 }
   
  ${({theme,error})=> error && css`
